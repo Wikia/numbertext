@@ -1,8 +1,8 @@
 {
 	"name": "Numbertext",
-	"version": "0.10.0",
+	"version": "0.10.0.0",
 	"author": [
-		"Pavel Astakhov "
+		"Pavel Astakhov"
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:Numbertext",
 	"type": "parserhook",
