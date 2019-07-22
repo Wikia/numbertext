@@ -1,0 +1,28 @@
+{
+	"name": "Numbertext",
+	"version": "0.10.0",
+	"author": [
+		"Pavel Astakhov "
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:Numbertext",
+	"type": "parserhook",
+	"requires": {
+		"MediaWiki": ">= 1.31.0"
+	},
+	"MessagesDirs": {
+		"Numbertext": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"NumbertextMagic": "Numbertext.i18n.magic.php"
+	},
+	"AutoloadClasses": {
+		"Numbertext": "Numbertext.body.php",
+		"Soros": "Soros.php"
+	},
+	"Hooks": {
+		"ParserFirstCallInit": "Numbertext::onParserFirstCallInit"
+	},
+	"manifest_version": 2
+}

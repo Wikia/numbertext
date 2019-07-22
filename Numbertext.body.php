@@ -20,6 +20,65 @@ class Numbertext {
 		return $s;
 	}
 
+	public static function onParserFirstCallInit( Parser $parser ) {
+		global $wgNumbertext_defaultLang, $wgLanguageCode, $wgNumbertextLang;
+
+		$wgNumbertext_defaultLang = $wgLanguageCode;
+
+		$wgNumbertextLang = [
+			'Hung' => '',
+			'Hung_2' => '',
+			'Roman' => '',
+			'Roman_2' => '',
+			'Suzhou' => '',
+			'af_ZA' => 'af',
+			'ca_ES' => 'ca',
+			'cs_CZ' => 'cs',
+			'da_DK' => 'da',
+			'de_DE' => 'de',
+			'el_EL' => 'el',
+			'en_IN' => '',
+			'en_US' => 'en',
+			'en_US_2' => '',
+			'eo' => 'eo',
+			'es_ES' => 'es',
+			'fi_FI' => 'fi',
+			'fr_BE' => '',
+			'fr_CH' => '',
+			'fr_FR' => 'fr',
+			'he_IL' => 'he',
+			'hu_HU' => 'hu',
+			'hu_HU_2' => '',
+			'id_ID' => 'id',
+			'it_IT' => 'it',
+			'ja_JP' => 'ja',
+			'ja_JP_2' => '',
+			'ko_KP' => 'ko-KP',
+			'ko_KR' => 'ko',
+			'lb_LU' => 'lb',
+			'lt_LT' => 'lt',
+			'lv_LV' => 'lv',
+			'nl_NL' => 'nl',
+			'pl_PL' => 'pl',
+			'pt_BR' => 'pt-BR',
+			'pt_PT' => 'pt',
+			'ro_RO' => 'ro',
+			'ru_RU' => 'ru',
+			'sh_RS' => 'sh',
+			'sl_SI' => 'sl',
+			'sr_RS' => 'sr',
+			'sv_SE' => 'sv',
+			'th_TH' => 'th',
+			'tr_TR' => 'tr',
+			'vi_VN' => 'vi',
+			'zh_ZH' => 'zh',
+			'zh_ZH_2' => '',
+		];
+
+		$parser->setFunctionHook( 'MAG_NUMBERTEXT', 'Numbertext::numbertext' );
+		$parser->setFunctionHook( 'MAG_MONEYTEXT', 'Numbertext::moneytext' );
+	}
+
 	private static function getModules( $m = null ) {
 		static $modules = [];
 		if ( is_array( $m ) ) {
